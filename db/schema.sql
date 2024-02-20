@@ -22,7 +22,7 @@ USE employee_db;
 
  );
 
-CREATE TABLE employees (
+CREATE TABLE employee (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
     first_name VARCHAR(30) NOT NULL;
     last_name VARCHAR(40) NOT NULL;
@@ -31,7 +31,7 @@ CREATE TABLE employees (
     REFERENCES role(id)
     ON DELETE SET NULL;
     manager_id INT;
-    CONSTRAINT employees_manager_id FOREIGN KEY (manager_id)
+    CONSTRAINT employee_manager_id FOREIGN KEY (manager_id)
     REFERENCES employee(id)
     ON DELETE SET NULL
 

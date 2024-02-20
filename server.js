@@ -9,7 +9,7 @@ const db = mysql.createConnection(
         // MySQL username,
         user: 'root',
         // TODO: Add MySQL password here
-        password: '',
+        password: '5Gnbtndg!',
         database: 'employee_db'
     },
     console.log(`Connected to the employee_db database.`)
@@ -30,11 +30,12 @@ const init = () =>{
                 "Add Role",
                 "View All Departments",
                 "Add Department"
-            ]
+            ],
+            name: "action"
         },
         ]).then(response => {
             
-            switch (response.initialize) {
+            switch (response.action) {
                 case "View all departments": viewDept();
                     break;
                 case "View all roles": viewRoles();
@@ -53,7 +54,7 @@ const init = () =>{
                     console.log("Thank you very much!");
                     process.exit();
             }
-        }).catch(err => console.log.error(err))
+        }).catch(err =>  console.error(err))
 }
 init()
 
